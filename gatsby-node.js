@@ -14,7 +14,7 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
   }).then(response => response.json())
 
   const transformedUsers = users.map(({ id, attributes }) => ({
-    id,
+    teamtailorId: id,
     name: attributes.name,
     title: attributes.title,
     picture: {
@@ -26,7 +26,7 @@ exports.sourceNodes = async ({ boundActionCreators, createNodeId }, configOption
   return transformedUsers.map(user =>
     createNode({
       ...user,
-      id: createNodeId(`teamtailor-user-${user.id}`),
+      id: createNodeId(`teamtailor-user-${user.teamtailorId}`),
       children: [],
       parent: null,
       internal: {
