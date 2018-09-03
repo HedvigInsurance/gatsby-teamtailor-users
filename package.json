@@ -1,0 +1,22 @@
+{
+  "name": "gatsby-teamtailor-users",
+  "version": "1.0.0",
+  "description": "A plugin for getting teamtailor users in gatsby",
+  "main": "gatsby-node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HedvigInsurance/gatsby-teamtailor-users.git"
+  },
+  "author": "Sam Pettersson <sam@hedvig.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HedvigInsurance/gatsby-teamtailor-users/issues"
+  },
+  "homepage": "https://github.com/HedvigInsurance/gatsby-teamtailor-users#readme",
+  "dependencies": {
+    "node-fetch": "^2.2.0"
+  }
+}
