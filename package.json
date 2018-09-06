@@ -1,6 +1,6 @@
 {
   "name": "gatsby-teamtailor-users",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A plugin for getting teamtailor users in gatsby",
   "main": "gatsby-node.js",
   "scripts": {
