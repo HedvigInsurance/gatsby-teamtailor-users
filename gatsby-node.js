@@ -32,21 +32,23 @@ exports.sourceNodes = async (
   const users = await getTeamtailorUsers({
     token: configOptions.token,
     url: "https://api.teamtailor.com/v1/users"
-  }).filter(({ attributes }) => attributes.visible);
+  });
 
-  const transformedUsers = users.map(({ id, attributes }) => ({
-    teamtailorId: id,
-    name: attributes.name,
-    title: attributes.title,
-    picture: {
-      standard: attributes.picture ? attributes.picture.standard : null,
-      large: attributes.picture
-        ? attributes.picture.standard
-            .replace("h_160", "h_1024")
-            .replace("w_160", "w_1024")
-        : null
-    }
-  }));
+  const transformedUsers = users
+    .filter(({ attributes }) => attributes.visible)
+    .map(({ id, attributes }) => ({
+      teamtailorId: id,
+      name: attributes.name,
+      title: attributes.title,
+      picture: {
+        standard: attributes.picture ? attributes.picture.standard : null,
+        large: attributes.picture
+          ? attributes.picture.standard
+              .replace("h_160", "h_1024")
+              .replace("w_160", "w_1024")
+          : null
+      }
+    }));
 
   return transformedUsers.map(user =>
     createNode({
