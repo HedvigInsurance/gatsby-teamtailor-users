@@ -32,7 +32,7 @@ exports.sourceNodes = async (
   const users = await getTeamtailorUsers({
     token: configOptions.token,
     url: "https://api.teamtailor.com/v1/users"
-  });
+  }).filter(({ attributes }) => attributes.visible);
 
   const transformedUsers = users.map(({ id, attributes }) => ({
     teamtailorId: id,
